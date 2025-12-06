@@ -30,7 +30,7 @@ The included `comfyui_workflow.json` file contains a basic text-to-image generat
    - CFG Scale: 8
    - Sampler: euler
    - Scheduler: normal
-   - Seed: randomize
+   - Seed: 42 (randomize mode enabled)
 
 6. **VAEDecode** - Decodes the latent image to pixel space
 
