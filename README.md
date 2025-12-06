@@ -42,12 +42,13 @@ The included `comfyui_workflow.json` file contains a basic text-to-image generat
 ```
                          ┌──> CLIPTextEncode (Positive) ──┐
                          │                                 │
-CheckpointLoaderSimple ──┼──> CLIPTextEncode (Negative) ──┼──> KSampler ──┐
-                         │                                 │               │
-                         │                                 ↑               ↓
-                         │                  EmptyLatentImage        VAEDecode ──> SaveImage
-                         │                                               ↑
-                         └───────────────────────────────────────────────┘
+CheckpointLoaderSimple ──┼──> CLIPTextEncode (Negative) ──┼──> KSampler ──> VAEDecode ──> SaveImage
+                         │                                 │       ↑              ↑
+                         │                                 │       │              │
+                         │                  EmptyLatentImage ──────┘              │
+                         │                                                        │
+                         └────────────────────────────────────────────────────────┘
+                                                    (VAE)
 ```
 
 ## How to Use
